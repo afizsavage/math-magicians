@@ -1,18 +1,21 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import Button from './button';
 
 // import { Calculate, Operate } from '../logic';
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { screenValue: null };
+    this.state = { screenValue: 0 };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(value) {
-    this.setState({ screenValue: value });
+  handleClick(currentState, event) {
+    this.setState({
+      screenValue: currentState === 0 ? event : `${currentState}${event}`,
+    });
   }
 
   render() {
@@ -28,91 +31,180 @@ class Calculator extends React.Component {
             <tbody>
               <tr>
                 <td>
-                  <button type="button">AC</button>
+                  <Button
+                    text="AC"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">+/-</button>
+                  <Button
+                    text="+/-"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">%</button>
+                  <Button
+                    text="%"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td className="end">
-                  <button type="button">+</button>
+                  <Button
+                    text="+"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
               </tr>
               <tr>
                 <td>
                   {' '}
-                  <button type="button">7</button>
+                  <Button
+                    text="7"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">8</button>
+                  <Button
+                    text="8"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">9</button>
+                  <Button
+                    text="9"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
-                <td>
+                <td className="end">
                   {' '}
-                  <button type="button" className="end">
-                    *
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  {' '}
-                  <button type="button">4</button>
-                </td>
-                <td>
-                  {' '}
-                  <button type="button">5</button>
-                </td>
-                <td>
-                  {' '}
-                  <button type="button">6</button>
-                </td>
-                <td>
-                  {' '}
-                  <button type="button" className="end">
-                    -
-                  </button>
+                  <Button
+                    text="*"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
               </tr>
               <tr>
                 <td>
                   {' '}
-                  <button type="button">1</button>
+                  <Button
+                    text="4"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">2</button>
+                  <Button
+                    text="5"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">3</button>
+                  <Button
+                    text="6"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
+                </td>
+                <td className="end">
+                  {' '}
+                  <Button
+                    text="-"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  {' '}
+                  <Button
+                    text="1"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button" className="end">
-                    +
-                  </button>
+                  <Button
+                    text="2"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
+                </td>
+                <td>
+                  {' '}
+                  <Button
+                    text="3"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
+                </td>
+                <td className="end">
+                  {' '}
+                  <Button
+                    text="+"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
               </tr>
               <tr>
                 <td colSpan={2}>
                   {' '}
-                  <button type="button">0</button>
+                  <Button
+                    text="0"
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td>
                   {' '}
-                  <button type="button">.</button>
+                  <Button
+                    text="."
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
                 <td className="end">
-                  <button type="button">=</button>
+                  <Button
+                    text="="
+                    handleClick={(e) => {
+                      this.handleClick(screenValue, e.target.textContent);
+                    }}
+                  />
                 </td>
               </tr>
             </tbody>
