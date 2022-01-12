@@ -2,13 +2,27 @@
 
 import React from 'react';
 
+// import { Calculate, Operate } from '../logic';
 class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { screenValue: null };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(value) {
+    this.setState({ screenValue: value });
+  }
+
   render() {
+    const { screenValue } = this.state;
+
     return (
       <div className="calc">
         <div className="cont">
           <div>
-            <input type="text" value={0} />
+            <input type="text" placeholder={0} value={screenValue} />
           </div>
           <table>
             <tbody>

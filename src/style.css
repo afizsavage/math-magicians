@@ -49,6 +49,7 @@ table button {
   background: inherit;
   font-size: 1.1rem;
   color: #000;
+  cursor: pointer;
 }
 
 table td {
@@ -60,4 +61,20 @@ table td {
 
 table .end {
   background: #f5913e;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
 }
