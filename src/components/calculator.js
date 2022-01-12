@@ -4,9 +4,11 @@ import React from 'react';
 class Calculator extends React.Component {
   render() {
     return (
-      <main>
-        <div className="">
-          <input type="text" value={0} />
+        <div className="calc">
+          <div className="cont">
+          <div>
+            <input type="text" value={0} />
+          </div>
           <table>
             <tbody>
               <tr>
@@ -21,7 +23,7 @@ class Calculator extends React.Component {
                   {' '}
                   <button>%</button>
                 </td>
-                <td>+</td>
+                <td className="end"><button>+</button></td>
               </tr>
               <tr>
                 <td>
@@ -38,7 +40,7 @@ class Calculator extends React.Component {
                 </td>
                 <td>
                   {' '}
-                  <button>*</button>
+                  <button className="end">*</button>
                 </td>
               </tr>
               <tr>
@@ -56,7 +58,7 @@ class Calculator extends React.Component {
                 </td>
                 <td>
                   {' '}
-                  <button>-</button>
+                  <button className="end">-</button>
                 </td>
               </tr>
               <tr>
@@ -74,7 +76,7 @@ class Calculator extends React.Component {
                 </td>
                 <td>
                   {' '}
-                  <button>+</button>
+                  <button className="end">+</button>
                 </td>
               </tr>
               <tr>
@@ -86,12 +88,12 @@ class Calculator extends React.Component {
                   {' '}
                   <button>.</button>
                 </td>
-                <td>=</td>
+                <td className="end"><button>=</button></td>
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
-      </main>
     );
   }
 }

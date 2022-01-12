@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+.calc {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.cont {
+  width: 32rem;
+}
+
+.cont input {
+  width: 100%;
+  text-align: right;
+  padding: 1.2rem 0.4rem;
+  border: none;
+  background: #838592;
+  color: white;
+  font-size: 2rem;
+}
+
+.cont input:focus {
+  outline: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #e0e0e0;
+}
+
+table button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: inherit;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+table td {
+  border-collapse: collapse;
+  border: #c0c0c0 2px solid;
+  height: 4rem;
+  width: 25%;
+}
+
+table .end {
+  background: #f5913e;
+}
