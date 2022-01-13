@@ -30,7 +30,7 @@ class Calculator extends React.Component {
   componentDidUpdate() {
     const { data } = this.state;
     if (this.inputRef.current) {
-      this.inputRef.current.value = `${data.total === null ? '' : data.total} ${data.operation === null ? '' : data.operation} ${data.next === null ? '' : data.next}`;
+      this.inputRef.current.value = `${data.total === null ? '0' : data.total} ${data.operation === null ? '' : data.operation} ${data.next === null ? '' : data.next}`;
     }
   }
 
@@ -38,6 +38,17 @@ class Calculator extends React.Component {
     const stateObj = this.state;
     const operator = operators.includes(button);
     let total;
+
+    if (button === 'AC') {
+      this.setState({
+        data: {
+          total: null,
+          next: null,
+          operation: null,
+        },
+      });
+      return;
+    }
 
     if (button === '=') {
       if (stateObj.data.operation && stateObj.data.next) {
