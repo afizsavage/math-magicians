@@ -3,17 +3,13 @@
 import React from 'react';
 import Button from './button';
 
-import { Calculate } from '../logic';
+import { Calculate, Operate } from '../logic';
 
-const operators = ['+/-', '%', '+', '*', '-', '+'];
+const operators = ['+/-', '%', '+', 'x', '-', '+'];
 
 function isNumber(item) {
   return !!item.match(/[0-9]+/);
 }
-
-// const updateInputValue = (input, spate) => {
-//   input.value = `${spate.data.total} ${spate.data.operation} ${spate.data.next}`;
-// }
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -41,6 +37,20 @@ class Calculator extends React.Component {
   handleClick(button) {
     const stateObj = this.state;
     const operator = operators.includes(button);
+    let total;
+
+    if (button === '=') {
+      if (stateObj.data.operation && stateObj.data.next) {
+        total = Operate(stateObj.data.total, stateObj.data.next, stateObj.data.operation);
+
+        this.setState({
+          data: {
+            total, next: null, operation: null,
+          },
+        });
+      }
+      return;
+    }
 
     if (operator) {
       this.setState({
@@ -147,7 +157,7 @@ class Calculator extends React.Component {
                 <td className="end">
                   {' '}
                   <Button
-                    text="*"
+                    text="x"
                     handleClick={(e) => {
                       this.handleClick(e.target.textContent);
                     }}
