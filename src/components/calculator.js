@@ -5,7 +5,7 @@ import Button from './button';
 
 import { Calculate, Operate } from '../logic';
 
-const operators = ['+/-', '%', '+', 'x', '-', '+'];
+const operators = ['%', '+', 'x', '-', '+'];
 
 function isNumber(item) {
   return !!item.match(/[0-9]+/);
