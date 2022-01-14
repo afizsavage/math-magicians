@@ -39,6 +39,13 @@ class Calculator extends React.Component {
     const operator = operators.includes(button);
     let total;
 
+    // if (button === '.') {
+    //   this.setState({
+    //     data: { ...stateObj.data },
+    //   });
+    //   console.log(result);
+    // }
+
     if (button === 'AC') {
       this.setState({
         data: {
@@ -69,7 +76,7 @@ class Calculator extends React.Component {
       });
     }
 
-    if (isNumber(button)) {
+    if (isNumber(button) || button === '.') {
       if (stateObj.data.total === null && stateObj.data.operation === null) {
         this.setState({
           data: { ...stateObj.data, total: button },
