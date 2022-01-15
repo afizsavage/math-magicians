@@ -2,14 +2,27 @@
 import { useState, useRef, useEffect } from 'react';
 
 import Button from './button';
-
 import { Calculate, Operate } from '../logic';
+import { isNumber } from '../logic/calculate';
 
 const operators = ['%', '÷', 'x', '-', '+'];
 
-function isNumber(item) {
-  return !!item.match(/[0-9]+/);
-}
+const doNumberEvaluation = (btn, dataObj, update) => {
+  if (isNumber(btn) || btn === '.') {
+    if (dataObj.total === null && dataObj.operation === null) {
+      update(
+        { ...dataObj, total: btn },
+      );
+    } else if (dataObj.total && !dataObj.operation) {
+      update(
+        {
+          ...dataObj,
+          total: dataObj.total + btn,
+        },
+      );
+    }
+  }
+};
 
 const Calculator = () => {
   const initialState = { total: null, next: null, operation: null };
@@ -50,20 +63,7 @@ const Calculator = () => {
       );
     }
 
-    if (isNumber(button) || button === '.') {
-      if (data.total === null && data.operation === null) {
-        setdata(
-          { ...data, total: button },
-        );
-      } else if (data.total !== null && data.operation === null) {
-        setdata(
-          {
-            ...data,
-            total: data.total + button,
-          },
-        );
-      }
-    }
+    doNumberEvaluation(button, data, setdata);
 
     const result = Calculate(data, button);
     if (result.total && result.operation) {
@@ -75,7 +75,7 @@ const Calculator = () => {
 
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.value = `${data.total === null ? '0' : data.total} ${data.operation === null ? '' : data.operation} ${data.next === null ? '' : data.next}`;
+      inputRef.current.value = `${!data.total ? '0' : data.total} ${!data.operation ? '' : data.operation} ${!data.next ? '' : data.next}`;
     }
   }, [data]);
 
