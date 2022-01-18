@@ -1,14 +1,13 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import Calculator from './components/calculator';
+
+import Layout from './components/layout';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Calculator />
-      </div>
+      <Layout />
     );
   }
 }
