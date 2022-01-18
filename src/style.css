@@ -8,6 +8,36 @@ body {
   font-size: 16px;
 }
 
+.header {
+  background: rgb(233, 30, 99);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.5rem;
+  height: 5rem;
+  margin-bottom: 5rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+}
+
+nav li a {
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: black;
+}
+
+nav li a.active-link {
+  color: white;
+}
+
 .calc {
   width: 100%;
   height: 100%;

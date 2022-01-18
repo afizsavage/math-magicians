@@ -1,9 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
-import Navbar from './navbar';
+import Header from './header';
 
 const Layout = () => (
   <>
-    <Navbar />
+    <Header />
     <Switch>
       <Route exact path="/">
         <h1>Home</h1>
