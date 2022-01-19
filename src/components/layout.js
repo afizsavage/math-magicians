@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import CalculatorContainer from '../pages/calc-cont';
 import Home from '../pages/home';
+import Quote from '../pages/quote';
 import Header from './header';
 
 const Layout = () => (
@@ -15,7 +16,7 @@ const Layout = () => (
         <CalculatorContainer />
       </Route>
       <Route path="/quote">
-        <h1>quote</h1>
+        <Quote />
       </Route>
     </Switch>
   </>

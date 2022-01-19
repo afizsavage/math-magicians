@@ -47,9 +47,20 @@ section.container {
   justify-content: space-between;
 }
 
-.home-cont p {
+section p {
   font-size: 1.4rem;
   margin-bottom: 3rem;
+}
+
+section.quote {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+section.quote p {
+  width: 80%;
+  text-align: center;
 }
 
 h1 {
