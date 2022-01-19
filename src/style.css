@@ -38,8 +38,13 @@ nav li a.active-link {
   color: white;
 }
 
-.home-cont {
+section {
   padding: 0 7.5rem;
+}
+
+section.container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .home-cont p {
@@ -52,18 +57,9 @@ h1 {
   margin-bottom: 5rem;
 }
 
-.calc {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 3rem;
-}
-
 .cont {
-  width: 32rem;
+  width: 50rem;
+  height: 30rem;
 }
 
 .cont input {
@@ -82,6 +78,7 @@ h1 {
 
 table {
   width: 100%;
+  height: 100%;
   border-collapse: collapse;
   background: #e0e0e0;
 }

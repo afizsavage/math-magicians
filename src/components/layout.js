@@ -1,4 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
+
+import CalculatorContainer from '../pages/calc-cont';
 import Home from '../pages/home';
 import Header from './header';
 
@@ -9,10 +11,10 @@ const Layout = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="calculator">
-        <h1>calc</h1>
+      <Route path="/calculator">
+        <CalculatorContainer />
       </Route>
-      <Route exact path="quote">
+      <Route path="/quote">
         <h1>quote</h1>
       </Route>
     </Switch>
