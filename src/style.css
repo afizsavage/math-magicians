@@ -8,18 +8,75 @@ body {
   font-size: 16px;
 }
 
-.calc {
-  width: 100%;
-  height: 100%;
+.header {
+  background: rgb(233, 30, 99);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 7.5rem;
+  height: 5rem;
+  margin-bottom: 5rem;
+}
+
+.header span {
+  font-size: 3rem;
+  color: white;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+}
+
+nav li a {
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: black;
+}
+
+nav li a.active-link {
+  color: white;
+}
+
+section {
+  padding: 0 7.5rem;
+}
+
+section.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+section p {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+}
+
+section.quote {
+  display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  padding-top: 5rem;
+}
+
+section.quote p {
+  width: 80%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
 }
 
 .cont {
-  width: 32rem;
+  width: 50rem;
+  height: 30rem;
 }
 
 .cont input {
@@ -38,6 +95,7 @@ body {
 
 table {
   width: 100%;
+  height: 100%;
   border-collapse: collapse;
   background: #e0e0e0;
 }
